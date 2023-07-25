@@ -1,5 +1,5 @@
 abstract class Pessoa {
-  constructor(
+  public constructor(
     protected cpf: string,
     protected nome: string,
     protected telefone: string
