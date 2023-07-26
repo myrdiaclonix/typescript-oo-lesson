@@ -21,7 +21,7 @@ class Cliente extends Pessoa implements IUsuario {
   }
 
   public listarEnderecos(): void {
-    console.log(`Endereços do cliente ${this.nome}:`);
+    console.log(`> Endereços do cliente ${this.nome}:`);
     for (let endereco of this.enderecos) {
       console.log(`> ${endereco}`);
     }

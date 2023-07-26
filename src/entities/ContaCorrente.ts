@@ -11,14 +11,8 @@ class ContaCorrente extends Conta {
     if (this.calcularSaldo() - valor < 0) {
       console.log(`> Saque de R$ ${valor} negado por falta de saldo.`);
     } else {
-      let data = new Date();
-      this.debitos.push(
-        new Debito(
-          valor,
-          `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`
-        )
-      );
-      console.log(`> Saque de  R$ ${valor} realizado com sucesso.`);
+      this.debitar(valor);
+      console.log(`> Saque de R$ ${valor} realizado com sucesso.`);
     }
   }
 
@@ -37,16 +31,20 @@ class ContaCorrente extends Conta {
     if (this.calcularSaldo() - valor < 0) {
       console.log(`> Transferência de R$ ${valor} negada por falta de saldo.`);
     } else {
-      let data = new Date();
-      this.debitos.push(
-        new Debito(
-          valor,
-          `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`
-        )
-      );
+      this.debitar(valor);
       contaDestino.depositar(valor);
-      console.log(`> Transferência de  R$ ${valor} realizada com sucesso.`);
+      console.log(`> Transferência de R$ ${valor} realizada com sucesso.`);
     }
+  }
+
+  private debitar(valor: number): void {
+    let data = new Date();
+    this.debitos.push(
+      new Debito(
+        valor,
+        `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`
+      )
+    );
   }
 }
 

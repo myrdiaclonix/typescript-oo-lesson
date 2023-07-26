@@ -33,3 +33,5 @@ class ContaPoupanca extends Conta {
     return total;
   }
 }
+
+export default ContaPoupanca;

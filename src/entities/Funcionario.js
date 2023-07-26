@@ -10,6 +10,7 @@ class Funcionario extends Pessoa_1.default {
         this.salario = salario;
         this.cargos = [];
         this.cargos = cargo;
+        console.log(`> Funcionário criado com sucesso: ${nome}.`);
     }
     autenticar() {
         return true;

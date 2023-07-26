@@ -30,3 +30,4 @@ class ContaPoupanca extends Conta_1.default {
         return total;
     }
 }
+exports.default = ContaPoupanca;

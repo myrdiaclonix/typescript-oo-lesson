@@ -14,6 +14,8 @@ class Funcionario extends Pessoa implements IUsuario {
   ) {
     super(cpf, nome, telefone);
     this.cargos = cargo;
+
+    console.log(`> Funcionário criado com sucesso: ${nome}.`)
   }
 
   public autenticar(): boolean {
