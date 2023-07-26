@@ -1,8 +1,23 @@
-abstract class Conta {
-  public constructor(protected numero: string) {}
+import Cliente from "./Cliente";
+import Credito from "./Credito";
+import Debito from "./Debito";
 
-  public abstract depositar(valor: number): boolean;
-  public abstract sacar(valor: number): boolean;
+abstract class Conta {
+  protected creditos: Credito[] = [];
+  protected debitos: Debito[] = [];
+
+  public constructor(protected numero: string, protected titular: Cliente) {}
+
+  public depositar(valor: number): void {
+    let data = new Date();
+    this.creditos.push(
+      new Credito(
+        valor,
+        `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`
+      )
+    );
+  }
+  public abstract sacar(valor: number): void;
 }
 
 export default Conta;

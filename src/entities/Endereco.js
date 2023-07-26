@@ -8,6 +8,9 @@ class Endereco {
         this.complemento = complemento;
         this.cidade = cidade;
         this.uf = uf;
+        this.toString = () => {
+            return `CEP: ${this.cep}, Logradouro: ${this.logradouro}, Num.: ${this.numero}, Compl.: ${this.complemento}, Cidade: ${this.cidade}, UF: ${this.uf}.`;
+        };
     }
 }
 exports.default = Endereco;

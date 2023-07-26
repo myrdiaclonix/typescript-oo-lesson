@@ -3,20 +3,17 @@ import IUsuario from "./IUsuario";
 import Pessoa from "./Pessoa";
 
 class Funcionario extends Pessoa implements IUsuario {
-  protected cargo: Cargo[] = [];
+  protected cargos: Cargo[] = [];
 
   public constructor(
     cpf: string,
     nome: string,
     telefone: string,
     protected salario: number,
-    ...args: string[]
+    ...cargo: Cargo[]
   ) {
     super(cpf, nome, telefone);
-
-    for (let arg of args) {
-      this.cargo.push(new Cargo(arg));
-    }
+    this.cargos = cargo;
   }
 
   public autenticar(): boolean {
